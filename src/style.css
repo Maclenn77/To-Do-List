@@ -1,3 +1,12 @@
+nav, footer {
+    max-height: 10px;
+    background-color: #000;
+}
+
 body {
-    background-color: bisque;
+    background-color: #f6f6f6;
+}
+
+main {
+    background-color: #fff;
 }
