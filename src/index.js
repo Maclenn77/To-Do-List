@@ -13,13 +13,13 @@ const toDoList = [task1, task2, task3];
 
 function isChecked(task) {
   if (task === true) {
-    return 'checked';
-  }
+    return 'checked'
+  };
 }
 
 function displayTasks() {
   for (let i = 0; i < toDoList.length; i += 1) {
-    tasksBoard.insertAdjacentHTML('beforeend', `<li><input type='checkbox' ${isChecked(toDoList[i].completed)}>${toDoList[i].description}</li>`)
+    tasksBoard.insertAdjacentHTML('beforeend', `<li><input type='checkbox' ${isChecked(toDoList[i].completed)}>${toDoList[i].description}</li>`);
   }
 }
 

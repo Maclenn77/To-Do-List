@@ -6,36 +6,23 @@ module.exports = {
     index: './src/index.js',
   },
   devServer: {
-
-      static: './dist',
-    
-    },
+    static: './dist',
+  },
   plugins: [
- 
-   new HtmlWebpackPlugin({
- 
+  new HtmlWebpackPlugin({
       template: './src/index.html'
- 
-   }),
- 
- ],
+    }),
+  ],
   output: {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
   },
   module: {
-
-      rules: [
-    
-        {
-    
-          test: /\.css$/i,
-    
+    rules: [
+      {
+        test: /\.css$/i,
           use: ['style-loader', 'css-loader'],
-    
-        },
-    
-      ],
-    
-    },
+      },
+    ],  
+  },
 };
