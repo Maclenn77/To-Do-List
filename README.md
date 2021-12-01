@@ -1,8 +1,8 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
+# To Do List
 
-> One paragraph statement about the project.
+> A simple HTML list of To Do tasks
 
 ![screenshot](./app_screenshot.png)
 
@@ -10,9 +10,9 @@ Additional description about the project and its features.
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
+- HTML/CSS
+- JavaScript
+- Webpack
 
 ## Live Demo
 
