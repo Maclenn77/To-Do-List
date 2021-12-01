@@ -14,9 +14,8 @@ const toDoList = [task1, task2, task3];
 function isChecked(task) {
   if (task === true) {
     return 'checked';
-  } else {
-    return '';
-  }
+  } 
+  return '';
 }
 
 function displayTasks() {
