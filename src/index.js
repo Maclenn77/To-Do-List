@@ -12,12 +12,20 @@ let task3 = {description: "Task Three", completed: true, index: 2};
 
 let toDoList = [task1, task2, task3];
 
+function isChecked(task) {
+  if (task === true) {
+    return 'checked';
+  }
+  else {
+    return '';
+  }
+}
 
 function displayTasks() {
 
    // Lodash, now imported by this script
     for (let i = 0; i < toDoList.length; i += 1) {
-      tasksBoard.insertAdjacentHTML('beforeend', `<li>${toDoList[i].description}</li>`)
+      tasksBoard.insertAdjacentHTML('beforeend', `<li><input type="checkbox" ${isChecked(toDoList[i].completed)}>${toDoList[i].description}</li>`)
     }
   }
 
