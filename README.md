@@ -16,26 +16,37 @@ Additional description about the project and its features.
 
 ## Live Demo
 
-[Live Demo Link](https://livedemo.com)
+[Live Demo Link](https://livedemo.com) (Not available yet!)
 
 
 ## Getting Started
-
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
-
 
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
+- A web browser
+- [NPM](https://webpack.js.org/)
+- [Webpack configured](https://webpack.js.org/)
+
 ### Setup
+
+- Clone the project from Github
+
+```git clone repolink```
+
 
 ### Install
 
+Once cloned, you can run it from your web browser from the dist version.
+
 ### Usage
 
-### Run tests
+- Do any change in the /src file
+- Run npm to update dist from src
+```npm run build```
+
+
 
 ### Deployment
 
@@ -45,21 +56,16 @@ To get a local copy up and running follow these simple example steps.
 
 👤 **Author1**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@Maclenn77](https://github.com/Maclenn77)
+- Twitter: [@SrJuanPapas](https://twitter.com/SrJuanPapas)
+- LinkedIn: [Juan Paulo Péreztejada](https://linkedin.com/in/juanpaulopereztejada)
 
-👤 **Author2**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
 
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](../../issues/).
+Feel free to check the [issues page](https://github.com/Maclenn77/To-Do-List/issues).
 
 ## Show your support
 
