@@ -40,11 +40,9 @@ checkLs();
 displayTasks();
 
 // Event Listeners
-
-checkTasks.forEach( (checkbox) => {
+checkTasks.forEach((checkbox) => {
   checkbox.addEventListener('click', (e) => {
     checkBox(toDoList, e.target.id);
     updateLs();
   });
 });
-

@@ -9,8 +9,7 @@ export function checkBox(list, taskIndex) {
   const index = list.findIndex((task) => task.index.toString() === taskIndex);
   if (list[index].completed === true) {
     list[index].completed = false;
-  }
-  else {
+  } else {
     list[index].completed = true;
   }
 }
