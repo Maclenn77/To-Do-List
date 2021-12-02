@@ -2,7 +2,7 @@ import './style.css';
 import { isChecked, checkBox } from './checkbox.js';
 
 const tasksBoard = document.getElementById('todo-list');
-const checkTasks = document.querySelectorAll('input');
+let checkTasks = document.querySelectorAll('input');
 
 // Dummy objects
 const task1 = { description: 'Task Two', completed: false, index: 1 };
@@ -32,6 +32,7 @@ function displayTasks() {
 
   for (let i = 0; i < sortedTasks.length; i += 1) {
     tasksBoard.insertAdjacentHTML('beforeend', `<li class='task'><input type='checkbox' id='${sortedTasks[i].index}' ${isChecked(sortedTasks[i].completed)}>${sortedTasks[i].description}</li>`);
+    checkTasks = document.querySelectorAll('input');
   }
 }
 
@@ -40,7 +41,7 @@ displayTasks();
 
 // Event Listeners
 
-checkTasks.forEach(function(checkbox) {
+checkTasks.forEach( (checkbox) => {
   checkbox.addEventListener('click', (e) => {
     checkBox(toDoList, e.target.id);
     updateLs();
