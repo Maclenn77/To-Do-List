@@ -19,7 +19,7 @@ function isChecked(task) {
 }
 
 function displayTasks() {
-  let sortedTasks = toDoList.sort((a, b) => a.index - b.index);
+  const sortedTasks = toDoList.sort((a, b) => a.index - b.index);
 
   for (let i = 0; i < sortedTasks.length; i += 1) {
     tasksBoard.insertAdjacentHTML('beforeend', `<li><input type='checkbox' ${isChecked(sortedTasks[i].completed)}>${sortedTasks[i].description}</li>`);
