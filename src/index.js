@@ -1,4 +1,5 @@
 import './style.css';
+import { isChecked, checkBox } from './checkbox.js';
 
 const tasksBoard = document.getElementById('todo-list');
 
@@ -10,13 +11,6 @@ const task3 = { description: 'Task Three', completed: true, index: 2 };
 // Array with objects
 
 const toDoList = [task1, task2, task3];
-
-function isChecked(task) {
-  if (task === true) {
-    return 'checked';
-  }
-  return '';
-}
 
 function displayTasks() {
   const sortedTasks = toDoList.sort((a, b) => a.index - b.index);
