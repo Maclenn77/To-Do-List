@@ -10,7 +10,19 @@ const task3 = { description: 'Task Three', completed: true, index: 2 };
 
 // Array with objects
 
-const toDoList = [task1, task2, task3];
+let toDoList = [task1, task2, task3];
+
+function checkLs() {
+  if (!localStorage.getItem('TodoList')) {
+    
+  } else {
+    toDoList = JSON.parse(localStorage.getItem('TodoList'));
+  }
+}
+
+function updateLs(toDoList) {
+  localStorage.setItem('TodoList', JSON.stringify(toDoList));
+}
 
 function displayTasks() {
   const sortedTasks = toDoList.sort((a, b) => a.index - b.index);
@@ -20,4 +32,5 @@ function displayTasks() {
   }
 }
 
+checkLs();
 displayTasks();
