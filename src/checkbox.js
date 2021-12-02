@@ -1,5 +1,3 @@
-
-
 export function isChecked(task) {
     if (task === true) {
       return 'checked';
@@ -7,11 +5,12 @@ export function isChecked(task) {
     return '';
   }
 
-export function checkBox(task) {
-    if (task.completed === true) {
-        task.completed = false;
+export function checkBox(list, taskIndex) {
+    const index = list.findIndex((task) => task.index.toString() === taskIndex)
+    if (list[index].completed === true) {
+        list[index].completed = false;
     }
     else {
-        task.completed = true;
+        list[index].completed = true;
     }
 }

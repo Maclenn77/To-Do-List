@@ -2,6 +2,8 @@ import './style.css';
 import { isChecked, checkBox } from './checkbox.js';
 
 const tasksBoard = document.getElementById('todo-list');
+const displayedTasks = document.getElementsByClassName('task');
+
 
 // Dummy objects
 const task1 = { description: 'Task Two', completed: false, index: 1 };
@@ -12,6 +14,8 @@ const task3 = { description: 'Task Three', completed: true, index: 2 };
 
 let toDoList = [task1, task2, task3];
 
+// Local Storage
+
 function checkLs() {
   if (!localStorage.getItem('TodoList')) {
     
@@ -20,17 +24,31 @@ function checkLs() {
   }
 }
 
-function updateLs(toDoList) {
+function updateLs() {
   localStorage.setItem('TodoList', JSON.stringify(toDoList));
 }
+
+// Display
 
 function displayTasks() {
   const sortedTasks = toDoList.sort((a, b) => a.index - b.index);
 
   for (let i = 0; i < sortedTasks.length; i += 1) {
-    tasksBoard.insertAdjacentHTML('beforeend', `<li><input type='checkbox' ${isChecked(sortedTasks[i].completed)}>${sortedTasks[i].description}</li>`);
+    tasksBoard.insertAdjacentHTML('beforeend', `<li class="task"><input type='checkbox' id='${sortedTasks[i].index}' ${isChecked(sortedTasks[i].completed)}>${sortedTasks[i].description}</li>`);
   }
 }
 
 checkLs();
 displayTasks();
+const checkTasks = document.querySelectorAll("input");
+
+// Event Listeners
+
+checkTasks.forEach(function(checkbox) {
+  checkbox.addEventListener('click', (e) => {
+    checkBox(toDoList, e.target.id);
+    updateLs();
+});
+
+});
+
