@@ -6,7 +6,26 @@
 
 ![screenshot](./app_screenshot.png)
 
-Additional description about the project and its features.
+## Features
+
+To Do List is a minimalist web app, but with all the functions that you need most for task management
+
+### Create Tasks
+
+Add text in the input box and press enter. The task will be ordered at the bottom.
+
+![screenshot](./Demo_Create.png)
+![screenshot](./Demo_Create00.png)
+
+### Edit tasks
+
+Click the text area. When the task is highlighted, you can edit your text. Changes will be saved after pressing enter.
+![screenshot](./Demo_Edit.png)
+![screenshot](./Demo_Edit01.png)
+![screenshot](./Demo_Edit02.png)
+![screenshot](./Demo_Edit03.png)
+
+
 
 ## Built With
 
