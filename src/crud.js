@@ -10,18 +10,24 @@ export default class Task {
     this.completed = false;
     thelist = thelist.push(this);
   }
+}
 
-  update(description, thelist) {
-    this.description = description;
-    updateLs(thelist);
-  }
+export function update(task, description, thelist) {
+  task.description = description;
+  updateLs(thelist)
 }
 
 export function removeTaskFrom(thelist, removed) {
-  let index = removed.index - 1;  
+  const ind = removed.index
+  const element = document.getElementById(ind.toString());
+  element.remove();
+  let index = ind - 1;  
   thelist.forEach((task) => {
-    if (task.index > removed.index) {
+    if (task.index > ind) {
+      let i = task.index.toString();
       task.index = task.index - 1;
+      let element = document.getElementById(i);
+      element.id = task.index.toString();
     };
   });
   thelist.splice(index, 1);
@@ -35,17 +41,10 @@ export function createTask(description, thelist) {
 
 export function removeAllFrom(thelist) {
   const tasksCompleted = thelist.filter( task => task.completed === true );
-  let indexes = []
-  
-  tasksCompleted.forEach((task) => {
-    indexes.push(task.index);
-  });
 
   tasksCompleted.forEach((task) => {
     removeTaskFrom(thelist, task);
   });
-  
-  return indexes
 }
 
 export function populate(thelist) {
