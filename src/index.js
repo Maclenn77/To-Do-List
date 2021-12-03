@@ -34,9 +34,9 @@ displayTasks();
 
 submitBox.addEventListener('keypress', (e) => {
   if (e.key === 'Enter') {
-    crud.createTask(e.target.value, toDoList);
-    const i = toDoList.length - 1;
-    tasksBoard.insertAdjacentHTML('beforeend', `<li class='task' id='${toDoList[i].index}'><input type='checkbox' class='checkbox' ${isChecked(toDoList[i].completed)}><span class='description' contenteditable='false'>${toDoList[i].description} </span><button class='remove-button' data-index='${toDoList[i].index}'> X </button></li>`);
+    const task = crud.createTask(e.target.value, toDoList);
+    tasksBoard.insertAdjacentHTML('beforeend', `<li class='task' id='${task.index}'><input type='checkbox' class='checkbox' ${isChecked(task.completed)}><span class='description' contenteditable='false'>${task.description} </span><button class='remove-button' data-index='${task.index}'> X </button></li>`);
+
   }
 });
 
@@ -44,7 +44,7 @@ tasksBoard.addEventListener('click', (x) => {
   const id = x.target.parentElement.getAttribute('id');
   const index = parseInt(id, 10) - 1;
   const task = toDoList[index];
-  if  (x.target.classList.contains('checkbox')) {
+  if (x.target.classList.contains('checkbox')) {
     checkBox(task, toDoList);
   } else if (x.target.classList.contains('remove-button')) {
     const removed = task;

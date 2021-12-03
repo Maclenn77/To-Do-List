@@ -37,10 +37,11 @@ export function removeTaskFrom(thelist, removed) {
 export function createTask(description, thelist) {
   const task = new Task(description, thelist);
   updateLs(thelist);
+  return task;
 }
 
 export function removeAllFrom(thelist) {
-  const tasksCompleted = thelist.filter(task => (task.completed === true));
+  const tasksCompleted = thelist.filter((task) => (task.completed === true));
 
   tasksCompleted.forEach((task) => {
     removeTaskFrom(thelist, task);
