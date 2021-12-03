@@ -18,29 +18,29 @@ export function update(task, description, thelist) {
 }
 
 export function removeTaskFrom(thelist, removed) {
-  const ind = removed.index
+  const ind = removed.index;
   const element = document.getElementById(ind.toString());
   element.remove();
-  let index = ind - 1;  
+  const index = ind - 1;
   thelist.forEach((task) => {
     if (task.index > ind) {
-      let i = task.index.toString();
-      task.index = task.index - 1;
-      let element = document.getElementById(i);
+      const i = task.index.toString();
+      task.index -= 1;
+      const element = document.getElementById(i);
       element.id = task.index.toString();
-    };
+    }
   });
   thelist.splice(index, 1);
   updateLs(thelist);
 }
 
 export function createTask(description, thelist) {
-  let task = new Task(description, thelist);
+  const task = new Task(description, thelist);
   updateLs(thelist);
-} 
+}
 
 export function removeAllFrom(thelist) {
-  const tasksCompleted = thelist.filter( task => task.completed === true );
+  const tasksCompleted = thelist.filter(task => (task.completed === true));
 
   tasksCompleted.forEach((task) => {
     removeTaskFrom(thelist, task);

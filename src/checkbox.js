@@ -1,4 +1,5 @@
-import { updateLs } from './crud'
+import { updateLs } from './crud.js';
+
 export function isChecked(task) {
   if (task === true) {
     return 'checked';

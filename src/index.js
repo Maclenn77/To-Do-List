@@ -1,6 +1,6 @@
 import './style.css';
 import { isChecked, checkBox } from './checkbox.js';
-import Task, * as crud from './crud.js';
+import * as crud from './crud.js';
 
 const tasksBoard = document.querySelector('#todo-list');
 const clearButton = document.getElementById('clear');
@@ -16,7 +16,7 @@ function checkLs() {
     localStorage.setItem('TodoList', JSON.stringify(toDoList));
   } else {
     toDoList = JSON.parse(localStorage.getItem('TodoList'));
-  };
+  }
 }
 
 function displayTasks() {
@@ -34,10 +34,10 @@ displayTasks();
 
 submitBox.addEventListener('keypress', (e) => {
   if (e.key === 'Enter') {
-    crud.createTask(e.target.value, toDoList)
+    crud.createTask(e.target.value, toDoList);
     const i = toDoList.length - 1;
     tasksBoard.insertAdjacentHTML('beforeend', `<li class='task' id='${toDoList[i].index}'><input type='checkbox' class='checkbox' ${isChecked(toDoList[i].completed)}><span class='description' contenteditable='false'>${toDoList[i].description} </span><button class='remove-button' data-index='${toDoList[i].index}'> X </button></li>`);
-  };
+  }
 });
 
 tasksBoard.addEventListener('click', (x) => {
@@ -51,7 +51,7 @@ tasksBoard.addEventListener('click', (x) => {
     crud.removeTaskFrom(toDoList, removed);
   } else if (x.target.classList.contains('description')) {
     x.target.setAttribute('contenteditable', 'true');
-    let edit = document.querySelector('[contenteditable=true]');
+    const edit = document.querySelector('[contenteditable=true]');
     edit.parentElement.style.background = '#fffeca';
     edit.addEventListener('keypress', (e) => {
       if (e.key === 'Enter') {
@@ -59,8 +59,8 @@ tasksBoard.addEventListener('click', (x) => {
         edit.parentElement.style.background = '#fff';
         crud.update(task, edit.textContent, toDoList);
       }
-    })    
-  };
+    });
+  }
 });
 
 clearButton.addEventListener('click', () => {
