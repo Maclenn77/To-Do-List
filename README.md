@@ -25,7 +25,13 @@ Click the text area. When the task is highlighted, you can edit your text. Chang
 ![screenshot](./Demo_Edit02.png)
 ![screenshot](./Demo_Edit03.png)
 
+### Check tasks
 
+Check and uncheck tast clicking the checkbox. 
+
+### Clear all completed tasks
+
+Remove all the tasks already done pressing the clear area
 
 ## Built With
 
