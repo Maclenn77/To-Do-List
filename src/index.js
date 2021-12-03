@@ -42,13 +42,6 @@ submitBox.addEventListener('keypress', (e) => {
   };
 });
 
-// checkTasks.forEach((checkbox) => {
-//   checkbox.addEventListener('click', (e) => {
-//     id = e.parentElement.id
-//     checkBox(toDoList, id);
-//   });
-// });
-
 tasksBoard.addEventListener('click', (x) => {
   const id = x.target.parentElement.getAttribute('id');
   const index = parseInt(x.target.getAttribute('data-index')) - 1;
@@ -57,14 +50,17 @@ tasksBoard.addEventListener('click', (x) => {
   } else if (x.target.classList.contains('remove-button')) {
     const removed = toDoList[index];
     crud.removeTaskFrom(toDoList, removed);
+    const element = document.getElementById(id);
+    element.remove();
+  } else if (x.target.classList.contains('description')) {
+    // Not yet
   };
 });
 
 clearButton.addEventListener('click', () => {
-  const clearedTasks = crud.removeAllFrom(toDoList);
-  clearedTasks.forEach((task) => {
-    id = task.index;
-    const element = document.getElementById(id);
-    element.parentElement.remove();
-  });
+  const indexes = crud.removeAllFrom(toDoList);
+  indexes.forEach((index) => {
+    const element = document.getElementById(index);
+    element.remove();
+  })
 });
