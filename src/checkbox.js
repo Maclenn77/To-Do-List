@@ -1,3 +1,4 @@
+import { updateLs } from './crud'
 export function isChecked(task) {
   if (task === true) {
     return 'checked';
@@ -12,4 +13,5 @@ export function checkBox(list, taskIndex) {
   } else {
     list[index].completed = true;
   }
+  updateLs(list);
 }
