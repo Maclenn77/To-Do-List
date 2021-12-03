@@ -16,7 +16,7 @@ Additional description about the project and its features.
 
 ## Live Demo
 
-[Live Demo Link](https://livedemo.com) (Not available yet!)
+[Live Demo Link](https://raw.githack.com/Maclenn77/To-Do-List/crud-implementation/dist/index.html)
 
 
 ## Getting Started
@@ -75,7 +75,7 @@ Give a ⭐️ if you like this project!
 
 - Hat tip to anyone whose code was used
 - Inspiration
-- etc
+- Microverse partners!
 
 ## 📝 License
 

@@ -23,7 +23,7 @@ function displayTasks() {
   const sortedTasks = toDoList.sort((a, b) => a.index - b.index);
 
   for (let i = 0; i < sortedTasks.length; i += 1) {
-    tasksBoard.insertAdjacentHTML('beforeend', `<li id='${sortedTasks[i].index}'><input type='checkbox' class='checkbox' ${isChecked(sortedTasks[i].completed)}><span class='description'>${sortedTasks[i].description} </span><button class='remove-button' data-index='${sortedTasks[i].index}'> <i class='material-icons'>close</i> </button></li>`);
+    tasksBoard.insertAdjacentHTML('beforeend', `<li id='${sortedTasks[i].index}'><input type='checkbox' class='checkbox' ${isChecked(sortedTasks[i].completed)}><span class='description'>${sortedTasks[i].description} </span><button class='remove-button' data-index='${sortedTasks[i].index}'> x </button></li>`);
   }
 }
 
@@ -35,7 +35,7 @@ displayTasks();
 submitBox.addEventListener('keypress', (e) => {
   if (e.key === 'Enter') {
     const task = crud.createTask(e.target.value, toDoList);
-    tasksBoard.insertAdjacentHTML('beforeend', `<li class='task' id='${task.index}'><input type='checkbox' class='checkbox' ${isChecked(task.completed)}><span class='description' contenteditable='false'>${task.description} </span><button class='remove-button' data-index='${task.index}'> <i class='material-icons'>close</i> </button></li>`);
+    tasksBoard.insertAdjacentHTML('beforeend', `<li class='task' id='${task.index}'><input type='checkbox' class='checkbox' ${isChecked(task.completed)}><span class='description' contenteditable='false'>${task.description} </span><button class='remove-button' data-index='${task.index}'> x </button></li>`);
   }
 });
 
