@@ -7,7 +7,6 @@ export function isChecked(task) {
 }
 
 export function checkBox(task, list) {
-  // const index = list.findIndex((task) => task.index.toString() === taskIndex);
   if (task.completed === true) {
     task.completed = false;
   } else {

@@ -23,8 +23,7 @@ function displayTasks() {
   const sortedTasks = toDoList.sort((a, b) => a.index - b.index);
 
   for (let i = 0; i < sortedTasks.length; i += 1) {
-    tasksBoard.insertAdjacentHTML('beforeend', crud.createNewElement(sortedTasks[i]));
-    // tasksBoard.insertAdjacentHTML('beforeend', `<li id='${sortedTasks[i].index}'><input type='checkbox' class='checkbox' ${isChecked(sortedTasks[i].completed)}><span class='description'>${sortedTasks[i].description} </span><button class='remove-button' data-index='${sortedTasks[i].index}'> X </button></li>`);
+    tasksBoard.insertAdjacentHTML('beforeend', `<li id='${sortedTasks[i].index}'><input type='checkbox' class='checkbox' ${isChecked(sortedTasks[i].completed)}><span class='description'>${sortedTasks[i].description} </span><button class='remove-button' data-index='${sortedTasks[i].index}'> X </button></li>`);
   }
 }
 
