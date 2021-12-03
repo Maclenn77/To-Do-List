@@ -36,7 +36,6 @@ submitBox.addEventListener('keypress', (e) => {
   if (e.key === 'Enter') {
     const task = crud.createTask(e.target.value, toDoList);
     tasksBoard.insertAdjacentHTML('beforeend', `<li class='task' id='${task.index}'><input type='checkbox' class='checkbox' ${isChecked(task.completed)}><span class='description' contenteditable='false'>${task.description} </span><button class='remove-button' data-index='${task.index}'> X </button></li>`);
-
   }
 });
 
