@@ -18,12 +18,15 @@ export default class Task {
 }
 
 export function removeTaskFrom(thelist, removed) {
+  let id = removed.index;
   let index = removed.index - 1;  
   thelist.forEach((task) => {
     if (task.index > removed.index) {
       task.index = task.index - 1;
     };
   });
+  const element = document.getElementById(id);
+  element.remove();
   thelist.splice(index, 1);
   updateLs(thelist);
 }
