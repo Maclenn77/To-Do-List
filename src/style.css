@@ -42,6 +42,7 @@ li {
 }
 
 span {
+  align-self: center;
   margin-right: auto;
   margin-left: 5px;
 }
@@ -67,9 +68,10 @@ footer {
   color: #bababa;
   padding: 10px;
   width: 90%;
-  margin-left: 5%;
-  margin-right: 5%;
+  margin-left: 2%;
+  margin-right: 2%;
   font-size: 16px;
+  background-color: #fafafa;
 }
 
 #new-task:focus {
@@ -81,3 +83,10 @@ footer {
   margin-right: 5%;
   font-size: 16px;
 }
+
+button {
+  border: none;
+  color: #bababa;
+  background-color: #fff;
+}
+
