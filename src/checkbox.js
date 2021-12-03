@@ -6,12 +6,12 @@ export function isChecked(task) {
   return '';
 }
 
-export function checkBox(list, taskIndex) {
-  const index = list.findIndex((task) => task.index.toString() === taskIndex);
-  if (list[index].completed === true) {
-    list[index].completed = false;
+export function checkBox(task, list) {
+  // const index = list.findIndex((task) => task.index.toString() === taskIndex);
+  if (task.completed === true) {
+    task.completed = false;
   } else {
-    list[index].completed = true;
+    task.completed = true;
   }
   updateLs(list);
 }

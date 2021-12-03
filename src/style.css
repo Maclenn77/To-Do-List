@@ -50,6 +50,10 @@ p {
   color: #bababa;
 }
 
+span[contenteditable='true'] {
+  border: #bababa 2px;
+}
+
 footer {
   height: 50px;
   background-color: #000;

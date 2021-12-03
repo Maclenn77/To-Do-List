@@ -43,19 +43,21 @@ submitBox.addEventListener('keypress', (e) => {
 tasksBoard.addEventListener('click', (x) => {
   const id = x.target.parentElement.getAttribute('id');
   const index = parseInt(id, 10) - 1;
-  const task = toDoList[index]
+  const task = toDoList[index];
   if  (x.target.classList.contains('checkbox')) {
-    checkBox(toDoList, id);
+    checkBox(task, toDoList);
   } else if (x.target.classList.contains('remove-button')) {
     const removed = task;
     crud.removeTaskFrom(toDoList, removed);
   } else if (x.target.classList.contains('description')) {
     x.target.setAttribute('contenteditable', 'true');
-    const edit = document.querySelector('[contenteditable]');
+    let edit = document.querySelector('[contenteditable=true]');
+    edit.parentElement.style.background = '#bababa';
     edit.addEventListener('keypress', (e) => {
       if (e.key === 'Enter') {
         edit.setAttribute('contenteditable', 'false');
-        crud.update(toDoList[index], edit.textContent, toDoList);
+        edit.parentElement.style.background = '#fff';
+        crud.update(task, edit.textContent, toDoList);
       }
     })    
   };

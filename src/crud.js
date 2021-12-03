@@ -14,7 +14,7 @@ export default class Task {
 
 export function update(task, description, thelist) {
   task.description = description;
-  updateLs(thelist)
+  updateLs(thelist);
 }
 
 export function removeTaskFrom(thelist, removed) {
