@@ -54,16 +54,16 @@ export function populate(thelist) {
 }
 
 function setAttributes(el, attrs) {
-    for(let key in attrs) {
-        el.setAttribute(key, attrs[key])
-    }
+  for(let key in attrs) {
+    el.setAttribute(key, attrs[key])
+  }
 }
 
 function  isChecked(task) {
   if (task === true) {
     return 'checked';
     }
-      return '';
+    return '';
 }
 
 export function createNewElement(task) {
