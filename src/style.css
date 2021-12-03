@@ -19,6 +19,8 @@ body {
   width: 400px;
   border: 5px;
   border-color: #f6f6f6;
+  padding: 10px;
+  margin: 50px;
 }
 
 h1 {
@@ -37,7 +39,7 @@ li {
   border-bottom: 2px solid #f6f6f6;
 }
 
-.clear {
+#clear {
   background-color: #f6f6f6;
   margin: 0;
   padding: 10px;

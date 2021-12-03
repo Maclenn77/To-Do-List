@@ -1,28 +1,47 @@
 // File with CRUD methods
+export function updateLs(thelist) {
+    localStorage.setItem('TodoList', JSON.stringify(thelist));
+  }
 
-let toDoList = [];
+export default class Task {
+  constructor(description, thelist) {
+    this.index = thelist.length + 1;
+    this.description = description;
+    this.completed = false;
+    thelist = thelist.push(this);
+  }
 
-class Task {
-    constructor(description) {
-        this.index = toDoList.length + 1;
-        this.description = description;
-        this.completed = false;
-      }
-    }
+  update(description, thelist) {
+    this.description = description;
+    updateLs(thelist);
+  }
 }
 
-function createTask(description) {
-    // Create new object Task
+export function removeTaskFrom(thelist, removed) {
+  thelist.forEach((task) => {
+    if (task.index > removed.index) {
+      task.index = task.index - 1;
+    }
+  let index = removed.index - 1;
+  thelist.splice(index, 1);
+  });
+  updateLs(thelist);
+}
+
+export function createTask(description, thelist) {
+  let task = new Task(description, thelist);
 } 
 
-function update(task) {
-    // Update the task
+export function removeAllFrom(thelist) {
+  const tasksCompleted = thelist.filter( task => task.completed === true );
+  tasksCompleted.forEach((task) => {
+      task.removeFrom(thelist);
+  });
+  return tasksCompleted;
 }
 
-function remove(task) {
-    // Delete a unique task
-}
-
-function removeAllTasks() {
-    // Remove all completed tasks
+export function populate(thelist) {
+  createTask('This a an example task', thelist);
+  createTask('This another example task', thelist);
+  createTask('You can remove and modify these tasks :)', thelist);
 }
