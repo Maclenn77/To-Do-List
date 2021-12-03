@@ -19,7 +19,6 @@ body {
   width: 400px;
   border: 5px;
   border-color: #f6f6f6;
-  padding: 10px;
   margin: 50px;
 }
 
@@ -32,11 +31,19 @@ h1 {
 ul {
   padding: 0;
   list-style-type: none;
+  margin: 0;
 }
 
 li {
+  display: flex;
+  justify-content: space-between;
   padding: 5px;
   border-bottom: 2px solid #f6f6f6;
+}
+
+span {
+  margin-right: auto;
+  margin-left: 5px;
 }
 
 #clear {
@@ -44,14 +51,8 @@ li {
   margin: 0;
   padding: 10px;
   text-align: center;
-}
-
-p {
-  color: #bababa;
-}
-
-span[contenteditable='true'] {
-  border: #bababa 2px;
+  color: #000;
+  text-decoration: underline;
 }
 
 footer {
@@ -59,4 +60,24 @@ footer {
   background-color: #000;
   width: 100%;
   align-self: flex-end;
+}
+
+#new-task {
+  border: none;
+  color: #bababa;
+  padding: 10px;
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+  font-size: 16px;
+}
+
+#new-task:focus {
+  outline: none;
+  color: #000;
+  padding: 10px;
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+  font-size: 16px;
 }

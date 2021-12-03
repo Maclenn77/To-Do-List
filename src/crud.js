@@ -52,3 +52,35 @@ export function populate(thelist) {
   createTask('This another example task', thelist);
   createTask('You can remove and modify these tasks :)', thelist);
 }
+
+function setAttributes(el, attrs) {
+    for(let key in attrs) {
+        el.setAttribute(key, attrs[key])
+    }
+}
+
+function  isChecked(task) {
+  if (task === true) {
+    return 'checked';
+    }
+      return '';
+}
+
+export function createNewElement(task) {
+    let id = task.index.toString();
+    let content = task.description;
+    let check = task.completed; 
+    let list = document.createElement('li');
+    list.id = id;
+    let input = document.createElement('input');
+    setAttributes(input, {'type': 'checkbox', 'class': 'checkbox', '': isChecked(check)});
+    let span = document.createElement('span').setAttribute('class', 'description');
+    let button = document.createElement('button')
+    setAttributes(button, {'class':'remove-button', 'data-index': id});
+    const line = () => {
+        list.appendChild(input);
+        list.appendChild(span.innerHtml(content));
+        list.appendChild(button);
+    }
+    return line;
+}

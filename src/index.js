@@ -23,7 +23,8 @@ function displayTasks() {
   const sortedTasks = toDoList.sort((a, b) => a.index - b.index);
 
   for (let i = 0; i < sortedTasks.length; i += 1) {
-    tasksBoard.insertAdjacentHTML('beforeend', `<li class='task' id='${sortedTasks[i].index}'><input type='checkbox' class='checkbox' ${isChecked(sortedTasks[i].completed)}><span class='description'>${sortedTasks[i].description} </span><button class='remove-button' data-index='${sortedTasks[i].index}'> X </button></li>`);
+    tasksBoard.insertAdjacentHTML('beforeend', crud.createNewElement(sortedTasks[i]));
+    // tasksBoard.insertAdjacentHTML('beforeend', `<li id='${sortedTasks[i].index}'><input type='checkbox' class='checkbox' ${isChecked(sortedTasks[i].completed)}><span class='description'>${sortedTasks[i].description} </span><button class='remove-button' data-index='${sortedTasks[i].index}'> X </button></li>`);
   }
 }
 
@@ -52,7 +53,7 @@ tasksBoard.addEventListener('click', (x) => {
   } else if (x.target.classList.contains('description')) {
     x.target.setAttribute('contenteditable', 'true');
     let edit = document.querySelector('[contenteditable=true]');
-    edit.parentElement.style.background = '#bababa';
+    edit.parentElement.style.background = '#fffeca';
     edit.addEventListener('keypress', (e) => {
       if (e.key === 'Enter') {
         edit.setAttribute('contenteditable', 'false');
