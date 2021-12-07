@@ -41,7 +41,7 @@ Remove all the tasks already done pressing the clear area
 
 ## Live Demo
 
-[Live Demo Link](https://raw.githack.com/Maclenn77/To-Do-List/main/dist/index.html)
+[Live Demo Link](https://maclenn77.github.io/To-Do-List/)
 
 
 ## Getting Started
